@@ -6,16 +6,6 @@ use App\Http\Controllers\API\AdminController;
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\ProductController;
 
-//______________________________________________________________________________
-
-Route::post('test',function(Request $request){
-    return response()->json([
-        'data'=>$request->all(),
-    ],200);
-});
-
-//______________________________________________________________________________
-
 Route::post('sign-up',[AuthController::class,'signUp']);
 Route::post('sign-in',[AuthController::class,'signIn']);
 
@@ -27,7 +17,7 @@ Route::post('search-product/{key}',[ProductController::class,'searchProduct']);
 //______________________________________________________________________________
 
 Route::middleware(['auth:sanctum'])->group(function(){
- 
+
     Route::post('sign-out',[AuthController::class,'signOut']);
 
     //Users
@@ -65,7 +55,7 @@ Route::middleware(['auth:sanctum','isAdmin'])->group(function(){
 //______________________________________________________________________________
 
 Route::middleware(['auth:sanctum','isUser'])->group(function(){
- 
+
     //User
     Route::put('decrease-balance/{id}',[UserController::class,'decreaseBalance']);
 
