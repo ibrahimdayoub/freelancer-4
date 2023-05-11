@@ -56,8 +56,8 @@ class AuthController extends Controller
     /**
      * Route: http://127.0.0.1:8000/api/sign-in
      * Method: post
-     * Takes: user information
-     * Returns: user
+     * Takes: admin or user information
+     * Returns: admin or user
      * Accessable: by any one
      */
     public function signIn(Request $request)
