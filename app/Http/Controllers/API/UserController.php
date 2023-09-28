@@ -23,6 +23,7 @@ class UserController extends Controller
 
         return response()->json([
             'users'=>$users,
+            'message'=>'Users Fetched Successfully',
         ],200);
     }
 
@@ -58,6 +59,7 @@ class UserController extends Controller
             $user->save();
 
             return response()->json([
+                'user'=>$user,
                 'message'=>'User Added Successfully',
             ],201);
         }

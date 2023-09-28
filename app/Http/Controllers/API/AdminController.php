@@ -23,6 +23,7 @@ class AdminController extends Controller
 
         return response()->json([
             'admins'=>$admins,
+            'message'=>'Admins Fetched Successfully',
         ],200);
     }
 
